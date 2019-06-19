@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: go-helloworld
+  name: go-helloworld
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: go-helloworld
+    spec:
+      containers:
+      - image: gcr.io/fukudak-gke/go-helloworld
+        name: go-helloworld
+        ports:
+        - containerPort: 8080
+
